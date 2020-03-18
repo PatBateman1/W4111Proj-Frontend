@@ -1,0 +1,44 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
+}
+
+
+.outer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(48,154,158,0.51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-end;
+}
+
+.inner {
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    font-size: 14px;
+}
+
+input {
+    width: 300px;
+    padding: 5px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+button {
+    width: 310px;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 40px;
+
+}

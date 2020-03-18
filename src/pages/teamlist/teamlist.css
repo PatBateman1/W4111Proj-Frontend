@@ -1,0 +1,37 @@
+.teamList {
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.teams {
+    height: 100%;
+    overflow: auto;
+}
+
+.teamBox {
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+.teamInfo {
+    border: black solid 2px;
+    width: 800px;
+}
+
+.playerBox {
+    display: flex;
+    width: 800px;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.player {
+    width: 100px;
+    height: 100px;
+    border: black solid 1px;
+    margin: 10px;
+}

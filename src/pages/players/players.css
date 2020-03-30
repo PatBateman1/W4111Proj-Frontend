@@ -1,0 +1,12 @@
+.playerInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.playerImgDetail {
+    width: 300px;
+}
+
+.even {
+    background-color: #f4f4f4;
+}

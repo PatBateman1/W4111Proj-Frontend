@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 
-import { BACKEND } from '../../config'
+import { BACKEND, TEAM_IMAGE } from '../../config'
 import TeamInfo from './teamInfo'
 import './teamlist.css'
+
+
+/**
+ *  Team List page
+ */
 
 class TeamList extends Component {
 
     constructor( props ) {
         super( props );
         this.state = {
-            team : '0',
+            team : { id : 0,  name : 'Atlanta Hawks', region : 'Southeast', short : 'ATL'},
             players : [],
             teams : []
         };
@@ -24,20 +29,23 @@ class TeamList extends Component {
         this.getPlayers();
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        // this.getPlayers();
+    }
+
     // get all team as an array from backend
     getTeams = function() {
         let url = BACKEND + 'teamList';
         fetch( url ).then( res => {
             return res.json();
         }).then( data => {
-            this.setState( {teams : data} );
-            console.log(this.state);
+            this.setState( { teams : data } );
         });
     };
 
     // get all players of the team chosen from backend
     getPlayers = function() {
-        let url = BACKEND + 'team/' + this.state.team;
+        let url = BACKEND + 'team/' + this.state.team.id;
         fetch( url ).then( res => {
             return res.json();
         }).then( data => {
@@ -47,8 +55,8 @@ class TeamList extends Component {
 
     // set the team in the list as the chosen team
     chooseTeam = function( event ) {
-        this.setState( { team : event.target.id} );
-        this.getPlayers();
+        let id = event.target.localName === 'div' ? event.target.id : event.target.parentNode.id;
+        this.setState( { team : this.state.teams[id]} , this.getPlayers );
 
     };
 
@@ -59,24 +67,18 @@ class TeamList extends Component {
                     {
                         this.state.teams.map( ( element ) => {
                             return (<div id={ element.id }
-                                         className='teamBox'
-                                         onClick={ this.chooseTeam }> { element.name } </div>)
+                                         className='team'
+                                         onClick={ this.chooseTeam }>
+                                            <img src={ TEAM_IMAGE + element.short + '_logo.svg' }
+                                                 className='team_img_small'
+                                                 alt='lost'
+                                            />
+                                            { element.name } </div>)
                         } )
                     }
                 </div>
                 < TeamInfo players={ this.state.players } team={ this.state.team } />
 
-                {/*<div className='teamInfo'>*/}
-                {/*    <div className='teamBox'> { this.state.team } </div>*/}
-                {/*    <div className='playerBox'>*/}
-                {/*        {*/}
-                {/*            this.state.players.map( ( element ) => {*/}
-                {/*                return ( <div className='player'> { element.name } </div> )*/}
-
-                {/*            })*/}
-                {/*        }*/}
-                {/*    </div>*/}
-                {/*</div>*/}
 
             </div>
         )

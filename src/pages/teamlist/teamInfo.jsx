@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { TEAM_IMAGE } from "../../config";
+import { TEAM_IMAGE } from '../../config'
 
 
 /**

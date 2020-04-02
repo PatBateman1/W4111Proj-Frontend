@@ -1,0 +1,18 @@
+
+
+.gamesInnerBox {
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    justify-content: space-between;
+}
+
+
+.gamesTable {
+    width: 60vw;
+}
+
+.infoImg {
+    width: 200px;
+    margin: 0 10vw ;
+}

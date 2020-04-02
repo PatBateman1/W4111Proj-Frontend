@@ -3,10 +3,12 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import Login from './pages/login/login'
 import TeamList from './pages/teamlist/teamlist'
-import Players from "./pages/players/players"
-import Games from './pages/games/games';
+import Players from './pages/players/players'
+import Games from './pages/games/games'
+import Register from './pages/login/register'
 
-// virtual root dom
+
+
 class App extends Component{
     render() {
 
@@ -17,6 +19,8 @@ class App extends Component{
                     <Route path='/teamList' component={ TeamList }/>
 
                     <Route path='/login' component={ Login }/>
+
+                    <Route path='/register' component={ Register }/>
 
                     <Route path='/players/:playerId' component={ Players }/>
 

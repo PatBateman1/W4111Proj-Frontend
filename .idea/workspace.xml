@@ -4,10 +4,9 @@
     <list default="true" id="86924fad-ce7f-41d8-a40d-930d3db8a54e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/games/games.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/games/games.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/teamlist/teamInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/teamlist/teamInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/teamlist/teamlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/teamlist/teamlist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/teamlist/teamlist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/teamlist/teamlist.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,8 @@
       <workItem from="1584395903115" duration="5728000" />
       <workItem from="1584409190092" duration="5081000" />
       <workItem from="1584421286736" duration="38186000" />
-      <workItem from="1585348009819" duration="27980000" />
+      <workItem from="1585348009819" duration="35610000" />
+      <workItem from="1585700477104" duration="8336000" />
     </task>
     <servers />
   </component>
@@ -101,26 +101,26 @@
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state x="693" y="280" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1010@0.27.1920.1010" timestamp="1584502353849" />
-    <state width="1874" height="121" key="GridCell.Tab.0.bottom" timestamp="1585540374731">
+    <state width="1874" height="121" key="GridCell.Tab.0.bottom" timestamp="1585867959111">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state width="1874" height="121" key="GridCell.Tab.0.bottom/0.27.1792.1050@0.27.1792.1050" timestamp="1584728982007" />
-    <state width="1874" height="121" key="GridCell.Tab.0.bottom/0.27.1920.1010@0.27.1920.1010" timestamp="1585540374731" />
-    <state width="1874" height="121" key="GridCell.Tab.0.center" timestamp="1585540374730">
+    <state width="1874" height="121" key="GridCell.Tab.0.bottom/0.27.1920.1010@0.27.1920.1010" timestamp="1585867959111" />
+    <state width="1874" height="121" key="GridCell.Tab.0.center" timestamp="1585867959111">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state width="1874" height="121" key="GridCell.Tab.0.center/0.27.1792.1050@0.27.1792.1050" timestamp="1584728982007" />
-    <state width="1874" height="121" key="GridCell.Tab.0.center/0.27.1920.1010@0.27.1920.1010" timestamp="1585540374730" />
-    <state width="1874" height="121" key="GridCell.Tab.0.left" timestamp="1585540374729">
+    <state width="1874" height="121" key="GridCell.Tab.0.center/0.27.1920.1010@0.27.1920.1010" timestamp="1585867959111" />
+    <state width="1874" height="121" key="GridCell.Tab.0.left" timestamp="1585867959110">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state width="1874" height="121" key="GridCell.Tab.0.left/0.27.1792.1050@0.27.1792.1050" timestamp="1584728982007" />
-    <state width="1874" height="121" key="GridCell.Tab.0.left/0.27.1920.1010@0.27.1920.1010" timestamp="1585540374729" />
-    <state width="1874" height="121" key="GridCell.Tab.0.right" timestamp="1585540374730">
+    <state width="1874" height="121" key="GridCell.Tab.0.left/0.27.1920.1010@0.27.1920.1010" timestamp="1585867959110" />
+    <state width="1874" height="121" key="GridCell.Tab.0.right" timestamp="1585867959111">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state width="1874" height="121" key="GridCell.Tab.0.right/0.27.1792.1050@0.27.1792.1050" timestamp="1584728982007" />
-    <state width="1874" height="121" key="GridCell.Tab.0.right/0.27.1920.1010@0.27.1920.1010" timestamp="1585540374730" />
+    <state width="1874" height="121" key="GridCell.Tab.0.right/0.27.1920.1010@0.27.1920.1010" timestamp="1585867959111" />
     <state width="1874" height="326" key="GridCell.Tab.1.bottom" timestamp="1584728979509">
       <screen x="0" y="27" width="1792" height="1050" />
     </state>
@@ -181,5 +181,9 @@
     </state>
     <state width="1874" height="326" key="GridCell.Tab.3.right/0.27.1792.1050@0.27.1792.1050" timestamp="1584728979511" />
     <state width="1874" height="326" key="GridCell.Tab.3.right/0.27.1920.1010@0.27.1920.1010" timestamp="1584425948033" />
+    <state x="616" y="358" key="com.intellij.ide.util.TipDialog" timestamp="1585700479340">
+      <screen x="0" y="27" width="1920" height="1010" />
+    </state>
+    <state x="616" y="358" key="com.intellij.ide.util.TipDialog/0.27.1920.1010@0.27.1920.1010" timestamp="1585700479340" />
   </component>
 </project>

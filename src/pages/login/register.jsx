@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 
-import { BACKEND } from '../../config'
-
+import TeamList from '../teamlist/teamlist'
 import './login.css'
+import { BACKEND } from '../../config'
+import { Redirect } from 'react-router-dom'
 
-class Login extends Component {
+class Register extends Component {
 
     constructor( props ) {
         super( props );
         this.state = {
-          Username : '',
-          Password : ''
+            Username : '',
+            Password : '',
+            Password2 : ''
         };
         this.handleSubmit = this.handleSubmit.bind( this );
         this.handleInputChange = this.handleInputChange.bind( this );
@@ -18,9 +20,11 @@ class Login extends Component {
 
     handleInputChange = function( event ){
         if ( event.target.className === 'Email' ){
-            this.setState({ Username : event.target.value } )
+            this.setState({ Username : event.target.value} )
+        } else if ( event.target.className === 'Password' ) {
+            this.setState({ Password : event.target.value} )
         } else {
-            this.setState({ Password : event.target.value } )
+            this.setState({ Password2 : event.target.value} )
         }
     };
 
@@ -28,8 +32,12 @@ class Login extends Component {
 
         event.preventDefault();
 
+        if ( this.state.Password !== this.state.Password2 ) {
+            alert( 'two passwords are not same' );
+            return;
+        }
         let data = {username : this.state.Username, password: this.state.Password};
-        let url = BACKEND + 'login';
+        let url = BACKEND + 'register';
         let req = {
             method : 'POST',
             body : JSON.stringify( data ),
@@ -40,7 +48,7 @@ class Login extends Component {
             return res.json()
         }).then( data => {
             if ( data.err ) {
-                alert( data.err );
+                alert( 'username has been used' );
             } else {
                 this.props.history.push('/teamList');
             }
@@ -51,13 +59,13 @@ class Login extends Component {
         return (
             <div className='outer'>
                 <div className='inner'>
-                    <h1>Login</h1>
+                    <h1>Register</h1>
                     <form onSubmit={ this.handleSubmit }>
-                        <p>Email Address</p>
+                        <p>Username</p>
                         <input type='text'
                                className='Email'
                                placeholder='Username'
-                               value={ this.state.Username }
+                               value={ this.state.Email }
                                onChange={ this.handleInputChange }
                         />
                         <p>Password</p>
@@ -66,10 +74,17 @@ class Login extends Component {
                                placeholder='Password'
                                value={ this.state.Password }
                                onChange={ this.handleInputChange }/>
+
+                        <p>Repeat Password</p>
+                        <input type='password'
+                               className='Password2'
+                               placeholder='Password'
+                               value={ this.state.Password2 }
+                               onChange={ this.handleInputChange }/>
                         <p> </p>
                         <button>Submit</button>
                         <p className='text'>Don't have an account?
-                            <a href='/register'>Create one</a>
+                            <a href='/'>Create one</a>
                         </p>
                     </form>
                 </div>
@@ -78,4 +93,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default Register;

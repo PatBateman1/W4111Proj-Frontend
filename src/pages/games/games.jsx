@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 
-import { BACKEND } from '../../config'
-import {Link} from "react-router-dom";
+import { BACKEND, TEAM_IMAGE } from '../../config'
+
+import './games.css'
+
 
 
 /**
@@ -14,17 +16,23 @@ class Games extends Component {
         super(props);
         this.state = {
             stats : [],
-            id : this.props.match.params.gameId
+            id : this.props.match.params.gameId,
+            map : {},
+            gameInfo : {}
         };
         this.getStats = this.getStats.bind( this );
+        this.getTeamMap = this.getTeamMap.bind(this);
+        this.getGameInfo = this.getGameInfo.bind(this);
     }
 
     componentDidMount() {
         this.getStats();
+        this.getGameInfo();
+        this.getTeamMap();
     }
 
     getStats = function() {
-        let url = BACKEND + '/games/' + this.state.id;
+        let url = BACKEND + '/games/gameStats/' + this.state.id;
         fetch( url ).then( res => {
             return res.json();
         }).then( data => {
@@ -32,10 +40,35 @@ class Games extends Component {
         });
     };
 
+    getGameInfo = function() {
+        let url = BACKEND + '/games/gameInfo/' + this.state.id;
+        fetch( url ).then( res => {
+            return res.json();
+        }).then( data => {
+            this.setState( { gameInfo : data } );
+        });
+    };
+
+    /**
+     * get a map which maps the id of a team to the name of the team
+     */
+    getTeamMap = function() {
+        let url = BACKEND + '/teamMap';
+        fetch( url ).then( res => {
+            return res.json();
+        }).then( data => {
+            this.setState( { map : data } )
+        });
+    };
+
     render() {
         return (
-            <div>
-                <table>
+            <div className='gamesOuterBox'>
+                <div className='gamesInnerBox'>
+                    <img src={ TEAM_IMAGE + this.state.map[this.state.gameInfo.team1_id] + '_logo.svg' } className='infoImg'/>
+                    <img src={ TEAM_IMAGE + this.state.map[this.state.gameInfo.team2_id] + '_logo.svg' } className='infoImg'/>
+                </div>
+                <table className='gamesTable'>
                         <thead>
                             <tr>
                                 <th>Name</th>

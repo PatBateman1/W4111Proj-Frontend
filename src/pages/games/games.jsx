@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { BACKEND, TEAM_IMAGE } from '../../config'
+import cookie from 'react-cookies'
 
 import './games.css'
 
@@ -23,6 +24,7 @@ class Games extends Component {
         this.getStats = this.getStats.bind( this );
         this.getTeamMap = this.getTeamMap.bind(this);
         this.getGameInfo = this.getGameInfo.bind(this);
+        this.vote = this.vote.bind(this);
     }
 
     componentDidMount() {
@@ -58,6 +60,47 @@ class Games extends Component {
             return res.json();
         }).then( data => {
             this.setState( { map : data } )
+        });
+    };
+
+
+    /**
+     * vote for game's MVP
+     * @param player_id: id of the player
+     * @param game_id: id of the game
+     */
+    vote = function( player_id, game_id ) {
+        let user_id = cookie.load('user_id');
+
+        if ( !user_id ) {
+            this.props.history.push( '/login' );
+            return;
+        }
+
+        let url = BACKEND + 'vote';
+        let data  = {
+            user_id : user_id,
+            player_id : player_id,
+            game_id : game_id
+        };
+
+        let req = {
+            method : 'POST',
+            body : JSON.stringify( data ),
+            headers : { 'Content-Type' : 'application/json' }
+        };
+
+        fetch( url, req ).then( res => {
+            return res.json();
+        }).then( data => {
+            if ( data.err ) {
+                alert( data.err );
+                return;
+            }
+            if ( data.success ) {
+                alert( 'successfully vote' );
+                return;
+            }
         });
     };
 
@@ -105,6 +148,9 @@ class Games extends Component {
                                         <th>{ element.hit }</th>
                                         <th>{ element.made }</th>
                                         <th>{ element.time }</th>
+                                        <button onClick={ () => {
+                                            this.vote( element.player_id, this.state.id );
+                                        } }> vote </button>
                                     </tr>
                                 )
                             } ) }

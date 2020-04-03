@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="86924fad-ce7f-41d8-a40d-930d3db8a54e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/games/games.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/games/games.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/teamlist/teamInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/teamlist/teamInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/register.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +86,7 @@
       <workItem from="1584409190092" duration="5081000" />
       <workItem from="1584421286736" duration="38186000" />
       <workItem from="1585348009819" duration="35610000" />
-      <workItem from="1585700477104" duration="8336000" />
+      <workItem from="1585700477104" duration="14987000" />
     </task>
     <servers />
   </component>

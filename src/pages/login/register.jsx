@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
-import TeamList from '../teamlist/teamlist'
-import './login.css'
+import cookie from 'react-cookies'
 import { BACKEND } from '../../config'
-import { Redirect } from 'react-router-dom'
+
+import './login.css'
+
 
 class Register extends Component {
 
@@ -41,7 +42,7 @@ class Register extends Component {
         let req = {
             method : 'POST',
             body : JSON.stringify( data ),
-            headers : { 'Content-Type': 'application/json' }
+            headers : { 'Content-Type' : 'application/json' }
         };
 
         fetch( url, req ).then( res => {
@@ -50,6 +51,7 @@ class Register extends Component {
             if ( data.err ) {
                 alert( 'username has been used' );
             } else {
+                cookie.save( "user_id", data.user_id, { path : '/' } );
                 this.props.history.push('/teamList');
             }
         });

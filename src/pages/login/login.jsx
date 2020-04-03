@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { BACKEND } from '../../config'
+import cookie from 'react-cookies'
 
 import './login.css'
 
@@ -16,6 +17,10 @@ class Login extends Component {
         this.handleInputChange = this.handleInputChange.bind( this );
     }
 
+    /**
+     * make the input blank responsive
+     * @param event
+     */
     handleInputChange = function( event ){
         if ( event.target.className === 'Email' ){
             this.setState({ Username : event.target.value } )
@@ -24,6 +29,11 @@ class Login extends Component {
         }
     };
 
+    /**
+     * handle the submit event of the form
+     * pass the username and password to backend
+     * @param event
+     */
     handleSubmit = function( event ) {
 
         event.preventDefault();
@@ -33,7 +43,7 @@ class Login extends Component {
         let req = {
             method : 'POST',
             body : JSON.stringify( data ),
-            headers : { 'Content-Type': 'application/json' }
+            headers : { 'Content-Type' : 'application/json' }
         };
 
         fetch( url, req ).then( res => {
@@ -42,6 +52,7 @@ class Login extends Component {
             if ( data.err ) {
                 alert( data.err );
             } else {
+                cookie.save( "user_id", data.user_id, { path : '/' } );
                 this.props.history.push('/teamList');
             }
         });

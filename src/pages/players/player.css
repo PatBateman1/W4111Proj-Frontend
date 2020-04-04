@@ -1,0 +1,58 @@
+.searchPlayer {
+    width: 40vw;
+    height: 30px;
+    font-size: 20px;
+    padding: 5px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.searchBtn {
+    height: 40px;
+    width: 10vw;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.select {
+    width: 40vw;
+    height: 20vh;
+    overflow: auto;
+    border: black solid 1px;
+    margin-bottom: 10px;
+}
+
+.searchImg {
+    width: 150px;
+}
+
+.searchResults {
+    margin-top: 10px;
+    height: 60vh;
+    width: 60vw;
+    overflow: auto;
+}
+
+.searchOuter {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.playerOuter {
+    margin-top: 20px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchDetail {
+    display: flex;
+    flex-direction: column;
+}
+
+.showSelect {
+    display: block;
+}

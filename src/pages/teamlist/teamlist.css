@@ -2,12 +2,12 @@
     display: flex;
     margin-left: 20%;
     margin-right: 20%;
-    width: 70vw;
+    width: 60vw;
 }
 
 .teams {
     height: 80vh;
-    width: 24vw;
+    width: 20vw;
     overflow: auto;
 }
 
@@ -26,13 +26,15 @@
 }
 
 .teamInfo {
-    border: black solid 2px;
-    width: 56vw;
+    width: 40vw;
+    height: 80vh;
+    overflow: scroll;
+
 }
 
 .playerBox {
     display: flex;
-    width: 56vw;
+    width: 40vw;
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;

@@ -1,6 +1,7 @@
 .playerInfo {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .playerImgDetail {
@@ -9,4 +10,17 @@
 
 .even {
     background-color: #f4f4f4;
+}
+
+.playerPage {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerPageOuter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

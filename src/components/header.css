@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    background-color: gray;
+    align-items: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-bottom: 10px;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.show {
+    display: block;
+}
+
+.notShow {
+    display: none;
+}
+
+.menuItem {
+    margin-right: 10px;
+
+}

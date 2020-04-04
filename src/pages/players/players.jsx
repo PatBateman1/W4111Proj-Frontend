@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { BACKEND } from '../../config'
 import './players.css'
+import Header from '../../components/header'
 
 /**
  *  The player info page
@@ -103,69 +104,77 @@ class Players extends Component {
     render() {
         return (
             <div>
-                <div className='playerInfo'>
-                    <img src={ this.state.player.image } className='playerImgDetail'/>
-                    <div>
-                        <div>name: { this.state.player.name }</div>
-                        <div>height: { this.state.player.height }m</div>
-                        <div>weight:{ this.state.player.weight }kg</div>
-                        <div>birthday: { this.state.player.dob }</div>
+                <Header/>
+                <div className='playerPageOuter'>
+                    <div className='playerPage'>
+                        <div className='playerInfo'>
+                            <img src={ this.state.player.image } className='playerImgDetail'/>
+                            <div>
+                                <div>name: { this.state.player.name }</div>
+                                <div>height: { this.state.player.height }m</div>
+                                <div>weight:{ this.state.player.weight }kg</div>
+                                <div>birthday: { this.state.player.dob }</div>
+
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>DATE</th>
+                                        <th>GAME</th>
+                                        <th>PTS</th>
+                                        <th>REB</th>
+                                        <th>AST</th>
+                                        <th>STL</th>
+                                        <th>BLK</th>
+                                        <th>TOV</th>
+                                        <th>3PA</th>
+                                        <th>3PM</th>
+                                        <th>FGA</th>
+                                        <th>FGM</th>
+                                        <th>MIN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    { this.state.stats.map( ( element, idx) => {
+                                        let row = 'odd';
+                                        if ( idx % 2 === 0) {
+                                            row = 'even';
+                                        }
+                                        return (
+                                            <tr className={ row }>
+                                                <th>{ element.date }</th>
+                                                <th><Link to={ '/games/' + element.game_id }>
+                                                    { `${ this.state.map[element.team1_id] } VS ${ this.state.map[element.team2_id] }` }
+                                                </Link></th>
+                                                <th>{ element.scores }</th>
+                                                <th>{ element.rebounds }</th>
+                                                <th>{ element.assists }</th>
+                                                <th>{ element.steals }</th>
+                                                <th>{ element.blocks }</th>
+                                                <th>{ element.turnovers }</th>
+                                                <th>{ element.three_hit }</th>
+                                                <th>{ element.three_made }</th>
+                                                <th>{ element.hit }</th>
+                                                <th>{ element.made }</th>
+                                                <th>{ element.time }</th>
+                                            </tr>
+                                        )
+                                    } ) }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <button onClick={ this.prevPage }>prev</button>
+                            <button onClick={ this.nextPage }>next</button>
+                        </div>
+
 
                     </div>
-
-
                 </div>
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>DATE</th>
-                                <th>GAME</th>
-                                <th>PTS</th>
-                                <th>REB</th>
-                                <th>AST</th>
-                                <th>STL</th>
-                                <th>BLK</th>
-                                <th>TOV</th>
-                                <th>3PA</th>
-                                <th>3PM</th>
-                                <th>FGA</th>
-                                <th>FGM</th>
-                                <th>MIN</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            { this.state.stats.map( ( element, idx) => {
-                                let row = 'odd';
-                                if ( idx % 2 === 0) {
-                                    row = 'even';
-                                }
-                                return (
-                                    <tr className={ row }>
-                                        <th>{ element.date }</th>
-                                        <th><Link to={ '/games/' + element.game_id }>
-                                            { `${ this.state.map[element.team1_id] } VS ${ this.state.map[element.team2_id] }` }
-                                        </Link></th>
-                                        <th>{ element.scores }</th>
-                                        <th>{ element.rebounds }</th>
-                                        <th>{ element.assists }</th>
-                                        <th>{ element.steals }</th>
-                                        <th>{ element.blocks }</th>
-                                        <th>{ element.turnovers }</th>
-                                        <th>{ element.three_hit }</th>
-                                        <th>{ element.three_made }</th>
-                                        <th>{ element.hit }</th>
-                                        <th>{ element.made }</th>
-                                        <th>{ element.time }</th>
-                                    </tr>
-                                )
-                            } ) }
-                        </tbody>
-                    </table>
-                </div>
-                <button onClick={ this.prevPage }>prev</button>
-                <button onClick={ this.nextPage }>next</button>
-
             </div>
         );
     }

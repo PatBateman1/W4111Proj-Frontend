@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 
 import { BACKEND, TEAM_IMAGE } from '../../config'
 import cookie from 'react-cookies'
+import Header from '../../components/header'
 
 import './games.css'
+
 
 
 
@@ -106,56 +108,63 @@ class Games extends Component {
 
     render() {
         return (
-            <div className='gamesOuterBox'>
-                <div className='gamesInnerBox'>
-                    <img src={ TEAM_IMAGE + this.state.map[this.state.gameInfo.team1_id] + '_logo.svg' } className='infoImg'/>
-                    <img src={ TEAM_IMAGE + this.state.map[this.state.gameInfo.team2_id] + '_logo.svg' } className='infoImg'/>
-                </div>
-                <table className='gamesTable'>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>PTS</th>
-                                <th>REB</th>
-                                <th>AST</th>
-                                <th>STL</th>
-                                <th>BLK</th>
-                                <th>TOV</th>
-                                <th>3PA</th>
-                                <th>3PM</th>
-                                <th>FGA</th>
-                                <th>FGM</th>
-                                <th>MIN</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            { this.state.stats.map( ( element, idx) => {
-                                let row = 'odd';
-                                if ( idx % 2 === 0) {
-                                    row = 'even';
-                                }
-                                return (
-                                    <tr className={ row }>
-                                        <th>{ element.name }</th>
-                                        <th>{ element.scores }</th>
-                                        <th>{ element.rebounds }</th>
-                                        <th>{ element.assists }</th>
-                                        <th>{ element.steals }</th>
-                                        <th>{ element.blocks }</th>
-                                        <th>{ element.turnovers }</th>
-                                        <th>{ element.three_hit }</th>
-                                        <th>{ element.three_made }</th>
-                                        <th>{ element.hit }</th>
-                                        <th>{ element.made }</th>
-                                        <th>{ element.time }</th>
-                                        <button onClick={ () => {
-                                            this.vote( element.player_id, this.state.id );
-                                        } }> vote </button>
+            <div>
+                <Header/>
+                <div className='gamePageOuter'>
+
+
+                    <div className='gamesOuterBox'>
+                        <div className='gamesInnerBox'>
+                            <img src={ TEAM_IMAGE + this.state.map[this.state.gameInfo.team1_id] + '_logo.svg' } className='infoImg'/>
+                            <img src={ TEAM_IMAGE + this.state.map[this.state.gameInfo.team2_id] + '_logo.svg' } className='infoImg'/>
+                        </div>
+                        <table className='gamesTable'>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>PTS</th>
+                                        <th>REB</th>
+                                        <th>AST</th>
+                                        <th>STL</th>
+                                        <th>BLK</th>
+                                        <th>TOV</th>
+                                        <th>3PA</th>
+                                        <th>3PM</th>
+                                        <th>FGA</th>
+                                        <th>FGM</th>
+                                        <th>MIN</th>
                                     </tr>
-                                )
-                            } ) }
-                        </tbody>
-                    </table>
+                                </thead>
+                                <tbody>
+                                    { this.state.stats.map( ( element, idx) => {
+                                        let row = 'odd';
+                                        if ( idx % 2 === 0) {
+                                            row = 'even';
+                                        }
+                                        return (
+                                            <tr className={ row }>
+                                                <th>{ element.name }</th>
+                                                <th>{ element.scores }</th>
+                                                <th>{ element.rebounds }</th>
+                                                <th>{ element.assists }</th>
+                                                <th>{ element.steals }</th>
+                                                <th>{ element.blocks }</th>
+                                                <th>{ element.turnovers }</th>
+                                                <th>{ element.three_hit }</th>
+                                                <th>{ element.three_made }</th>
+                                                <th>{ element.hit }</th>
+                                                <th>{ element.made }</th>
+                                                <th>{ element.time }</th>
+                                                <button className='voteBtn' onClick={ () => {
+                                                    this.vote( element.player_id, this.state.id );
+                                                } }> vote </button>
+                                            </tr>
+                                        )
+                                    } ) }
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
             </div>
         )
     }

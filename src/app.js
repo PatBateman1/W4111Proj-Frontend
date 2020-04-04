@@ -6,7 +6,7 @@ import TeamList from './pages/teamlist/teamlist'
 import Players from './pages/players/players'
 import Games from './pages/games/games'
 import Register from './pages/login/register'
-
+import Player from './pages/players/player'
 
 
 class App extends Component{
@@ -24,8 +24,10 @@ class App extends Component{
 
                     <Route path='/players/:playerId' component={ Players }/>
 
+                    <Route path='/player' component={ Player }/>
+
                     <Route path='/games/:gameId' component={ Games }/>
-                    {/*<Route path='/' component={ TeamList }/>*/}
+
                 {/*</Switch>*/}
             </BrowserRouter>
         );

@@ -19,6 +19,11 @@ class Register extends Component {
         this.handleInputChange = this.handleInputChange.bind( this );
     }
 
+
+    /**
+     * make the input blank responsive
+     * @param event
+     */
     handleInputChange = function( event ){
         if ( event.target.className === 'Email' ){
             this.setState({ Username : event.target.value} )
@@ -29,6 +34,12 @@ class Register extends Component {
         }
     };
 
+
+    /**
+     * check whether the username exists and whether the two passwords
+     * are the same, then send a post request to register the user into database
+     * @param event
+     */
     handleSubmit = function( event ) {
 
         event.preventDefault();

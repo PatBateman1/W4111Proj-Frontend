@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Header from '../../components/header'
 import { BACKEND, TEAM_IMAGE } from '../../config'
 import TeamInfo from './teamInfo'
 import './teamlist.css'
@@ -62,24 +62,27 @@ class TeamList extends Component {
 
     render() {
         return (
-            <div className='teamList'>
-                <div className='teams'>
-                    {
-                        this.state.teams.map( ( element ) => {
-                            return (<div id={ element.id }
-                                         className='team'
-                                         onClick={ this.chooseTeam }>
-                                            <img src={ TEAM_IMAGE + element.short + '_logo.svg' }
-                                                 className='team_img_small'
-                                                 alt='lost'
-                                            />
-                                            { element.name } </div>)
-                        } )
-                    }
+            <div>
+                <Header/>
+                <div className='teamList'>
+                    <div className='teams'>
+                        {
+                            this.state.teams.map( ( element ) => {
+                                return (<div id={ element.id }
+                                             className='team'
+                                             onClick={ this.chooseTeam }>
+                                                <img src={ TEAM_IMAGE + element.short + '_logo.svg' }
+                                                     className='team_img_small'
+                                                     alt='lost'
+                                                />
+                                                { element.name } </div>)
+                            } )
+                        }
+                    </div>
+                    < TeamInfo players={ this.state.players } team={ this.state.team } />
+
+
                 </div>
-                < TeamInfo players={ this.state.players } team={ this.state.team } />
-
-
             </div>
         )
     }

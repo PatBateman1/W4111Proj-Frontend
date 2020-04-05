@@ -50,7 +50,7 @@ class Header extends Component {
                     </div>
 
                     <div className='menuItem'>
-                        <Link to='/teamList'> GAME </Link>
+                        <Link to='/game'> GAME </Link>
                     </div>
                 </div>
                 <div className='right'>

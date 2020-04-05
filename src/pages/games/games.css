@@ -12,6 +12,7 @@
     flex-direction: row;
     width: 60vw;
     justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -21,9 +22,48 @@
 
 .infoImg {
     width: 200px;
-    margin: 0 10vw ;
 }
 
 .voteBtn {
     width: 50px;
 }
+
+.mvpBox {
+    font-size: 20px;
+}
+
+.calenderDiv {
+    background-color: gray;
+    width: 50px;
+    border: black solid 1px;
+    text-align: center;
+    margin: 2px;
+    color: cyan;
+}
+
+.calenderYear {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.calenderMonth {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.calendarBox {
+    margin-top: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calendarBoxOuter {
+    border: gray solid 1px;
+}
+
+
+

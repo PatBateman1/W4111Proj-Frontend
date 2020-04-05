@@ -6,11 +6,6 @@
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/games/games.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/games/games.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/games/games.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/games/games.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/players/players.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/players/players.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/players/players.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/players/players.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/teamlist/teamlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/teamlist/teamlist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/teamlist/teamlist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/teamlist/teamlist.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +84,7 @@
       <workItem from="1584409190092" duration="5081000" />
       <workItem from="1584421286736" duration="38186000" />
       <workItem from="1585348009819" duration="35610000" />
-      <workItem from="1585700477104" duration="36513000" />
+      <workItem from="1585700477104" duration="52918000" />
     </task>
     <servers />
   </component>

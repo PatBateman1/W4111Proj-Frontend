@@ -13,7 +13,7 @@ class Player extends Component {
             name : '',
             results : [],
             show : [],
-            hide : ''
+            hide : 'notShow'
         };
         this.handleInputChange = this.handleInputChange.bind( this );
         this.handleClick = this.handleClick.bind( this );

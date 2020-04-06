@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="86924fad-ce7f-41d8-a40d-930d3db8a54e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/games/games.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/games/games.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/games/games.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/games/games.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/players/player.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/players/player.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -51,6 +53,9 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/login" />
     </key>
@@ -84,7 +89,8 @@
       <workItem from="1584409190092" duration="5081000" />
       <workItem from="1584421286736" duration="38186000" />
       <workItem from="1585348009819" duration="35610000" />
-      <workItem from="1585700477104" duration="52918000" />
+      <workItem from="1585700477104" duration="53498000" />
+      <workItem from="1586120468645" duration="7459000" />
     </task>
     <servers />
   </component>
@@ -100,26 +106,26 @@
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state x="693" y="280" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1010@0.27.1920.1010" timestamp="1584502353849" />
-    <state width="1874" height="121" key="GridCell.Tab.0.bottom" timestamp="1585867959111">
+    <state width="1874" height="350" key="GridCell.Tab.0.bottom" timestamp="1586139348692">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state width="1874" height="121" key="GridCell.Tab.0.bottom/0.27.1792.1050@0.27.1792.1050" timestamp="1584728982007" />
-    <state width="1874" height="121" key="GridCell.Tab.0.bottom/0.27.1920.1010@0.27.1920.1010" timestamp="1585867959111" />
-    <state width="1874" height="121" key="GridCell.Tab.0.center" timestamp="1585867959111">
+    <state width="1874" height="350" key="GridCell.Tab.0.bottom/0.27.1920.1010@0.27.1920.1010" timestamp="1586139348692" />
+    <state width="1874" height="350" key="GridCell.Tab.0.center" timestamp="1586139348691">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state width="1874" height="121" key="GridCell.Tab.0.center/0.27.1792.1050@0.27.1792.1050" timestamp="1584728982007" />
-    <state width="1874" height="121" key="GridCell.Tab.0.center/0.27.1920.1010@0.27.1920.1010" timestamp="1585867959111" />
-    <state width="1874" height="121" key="GridCell.Tab.0.left" timestamp="1585867959110">
+    <state width="1874" height="350" key="GridCell.Tab.0.center/0.27.1920.1010@0.27.1920.1010" timestamp="1586139348691" />
+    <state width="1874" height="350" key="GridCell.Tab.0.left" timestamp="1586139348691">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state width="1874" height="121" key="GridCell.Tab.0.left/0.27.1792.1050@0.27.1792.1050" timestamp="1584728982007" />
-    <state width="1874" height="121" key="GridCell.Tab.0.left/0.27.1920.1010@0.27.1920.1010" timestamp="1585867959110" />
-    <state width="1874" height="121" key="GridCell.Tab.0.right" timestamp="1585867959111">
+    <state width="1874" height="350" key="GridCell.Tab.0.left/0.27.1920.1010@0.27.1920.1010" timestamp="1586139348691" />
+    <state width="1874" height="350" key="GridCell.Tab.0.right" timestamp="1586139348691">
       <screen x="0" y="27" width="1920" height="1010" />
     </state>
     <state width="1874" height="121" key="GridCell.Tab.0.right/0.27.1792.1050@0.27.1792.1050" timestamp="1584728982007" />
-    <state width="1874" height="121" key="GridCell.Tab.0.right/0.27.1920.1010@0.27.1920.1010" timestamp="1585867959111" />
+    <state width="1874" height="350" key="GridCell.Tab.0.right/0.27.1920.1010@0.27.1920.1010" timestamp="1586139348691" />
     <state width="1874" height="326" key="GridCell.Tab.1.bottom" timestamp="1584728979509">
       <screen x="0" y="27" width="1792" height="1050" />
     </state>

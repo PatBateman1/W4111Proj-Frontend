@@ -1,0 +1,32 @@
+.homeDivOuter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.homeDiv {
+    background-color: gray;
+    color: wheat;
+    width: 300px;
+    height: 200px;
+    font-size: 30px;
+}
+
+.homePage {
+    height: 100vh;
+    background-image: url("../../images/background.jpeg");
+}
+
+.upper {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1 {
+    margin: 0;
+}

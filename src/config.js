@@ -3,7 +3,7 @@
  */
 
 
-const BACKEND = 'http://127.0.0.1:5000/api/v1/';
+const BACKEND = 'http://35.227.43.98:8111/api/v1/';
 
 const TEAM_IMAGE = 'https://stats.nba.com/media/img/teams/logos/';
 

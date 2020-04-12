@@ -12,19 +12,10 @@ class TeamInfo extends Component {
 
     constructor( props ) {
         super( props );
-        this.state = { coach : '' };
-        this.getCoach = this.getCoach.bind( this );
     }
 
 
-    getCoach = function() {
-        let url = BACKEND + 'coach/' + this.props.team.id;
-        fetch( url ).then( res => {
-            return res.json();
-        }).then( data => {
-            this.setState( { coach : data.name } );
-        })
-    };
+
 
     render() {
         return (
@@ -34,9 +25,9 @@ class TeamInfo extends Component {
                                                  className='team_img_large'
                                                  alt='lost'
                                             />
-                    { this.props.team.name }
-                    <span>region : { this.props.team.region }</span>
-                    <span>coach : { this.state.coach }</span>
+                    <div className='teamInfoDiv'>{ this.props.team.name }</div>
+                    <div className='teamInfoDiv'>region : { this.props.team.region }</div>
+                    <div className='teamInfoDiv'>coach : { this.props.coach.name }</div>
                 </div>
                 <div className='playerBox'>
                     {

@@ -16,22 +16,22 @@ class TeamList extends Component {
         this.state = {
             team : { id : 0,  name : 'Atlanta Hawks', region : 'Southeast', short : 'ATL'},
             players : [],
-            teams : []
+            teams : [],
+            coach : {}
         };
         this.chooseTeam = this.chooseTeam.bind( this );
         this.getTeams = this.getTeams.bind( this );
         this.getPlayers = this.getPlayers.bind( this );
+        this.getCoach = this.getCoach.bind( this );
 
     }
 
     componentDidMount() {
         this.getTeams();
         this.getPlayers();
+        this.getCoach();
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        // this.getPlayers();
-    }
 
     // get all team as an array from backend
     getTeams = function() {
@@ -56,8 +56,21 @@ class TeamList extends Component {
     // set the team in the list as the chosen team
     chooseTeam = function( event ) {
         let id = event.target.localName === 'div' ? event.target.id : event.target.parentNode.id;
-        this.setState( { team : this.state.teams[id]} , this.getPlayers );
+        this.setState( { team : this.state.teams[id]} , () => {
+            this.getPlayers();
+            this.getCoach();
+        } );
 
+    };
+
+    getCoach = function() {
+        let url = BACKEND + 'coach/' + this.state.team.id;
+        fetch( url ).then( res => {
+            return res.json();
+        }).then( data => {
+            console.log(data)
+            this.setState( { coach : data } );
+        })
     };
 
     render() {
@@ -79,7 +92,7 @@ class TeamList extends Component {
                             } )
                         }
                     </div>
-                    < TeamInfo players={ this.state.players } team={ this.state.team } />
+                    <TeamInfo players={ this.state.players } team={ this.state.team } coach={ this.state.coach } />
 
 
                 </div>

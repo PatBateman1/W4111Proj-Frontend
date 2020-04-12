@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { TEAM_IMAGE } from '../../config'
+import { BACKEND, TEAM_IMAGE } from '../../config'
 
 
 /**
@@ -12,9 +12,19 @@ class TeamInfo extends Component {
 
     constructor( props ) {
         super( props );
-
+        this.state = { coach : '' };
+        this.getCoach = this.getCoach.bind( this );
     }
 
+
+    getCoach = function() {
+        let url = BACKEND + 'coach/' + this.props.team.id;
+        fetch( url ).then( res => {
+            return res.json();
+        }).then( data => {
+            this.setState( { coach : data.name } );
+        })
+    };
 
     render() {
         return (
@@ -26,6 +36,7 @@ class TeamInfo extends Component {
                                             />
                     { this.props.team.name }
                     <span>region : { this.props.team.region }</span>
+                    <span>coach : { this.state.coach }</span>
                 </div>
                 <div className='playerBox'>
                     {
